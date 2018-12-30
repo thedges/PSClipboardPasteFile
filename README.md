@@ -7,7 +7,7 @@ A title for the image can be provided when saving. If a title is not provided, a
 
 Component has following configuration options:
    * <b>Height</b> - the default height of the component (provide integer value for pixel height)
-   * <b>Image Size</b> - the size of image to compress to (provide integer value for compression size in kilobyte). Currently using [this GitHub library](https://github.com/WangYuLue/image-conversion) to compress images.
+   * <b>Compression Size</b> - the size of image to compress to (provide integer value for compression size in kilobyte). Currently using [this GitHub library](https://github.com/WangYuLue/image-conversion) to compress images to target kilobyte size.
    * <b>Message</b> - the message to show on main screen directly below image icon
    * <b>Save Button Text</b> - the text to show for the save button (this will save the clipboard image as content document)
    * <b>Clear Button Text</b> - the text to show for the clear button (to clear current clipboard selection)
