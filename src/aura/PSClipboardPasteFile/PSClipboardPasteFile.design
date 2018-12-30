@@ -1,0 +1,7 @@
+<design:component>
+	<design:attribute name="height" label="Default height of component in pixels"/>
+    <design:attribute name="imageSize" label="Size of image to compress to in kilobytes" />
+    <design:attribute name="message" label="Message to display on main screen" />
+    <design:attribute name="saveText" label="Button text for saving the image" />
+    <design:attribute name="clearText" label="Button text for clearing the image" />
+</design:component>

@@ -1,0 +1,44 @@
+<aura:component controller="PSClipboardPasteFileController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <ltng:require scripts="/resource/ConversionJS" />
+
+    <aura:attribute name="height" type="Integer" default="200"/>
+    <aura:attribute name="imageSize" type="Integer" default="200"/>
+    <aura:attribute name="message" type="String" default="Paste clipboard image here"/>
+    <aura:attribute name="saveText" type="String" default="Save File"/>
+    <aura:attribute name="clearText" type="String" default="Clear"/>
+
+    <aura:attribute name="fileData" type="Object" />
+    <aura:attribute name="title" type="String" default=""/>
+    <aura:attribute name="IsSpinner" type="Boolean" default="false"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <div class="slds-card">
+         <aura:if isTrue="{!v.IsSpinner}">
+            <lightning:spinner variant="brand" size="large" />
+        </aura:if>
+        <aura:if isTrue="{!v.fileData == null}">
+            <div class="paste-msg" style="{! 'height:' + v.height + 'px'}">
+                <p>
+                    <img src="/resource/PSClipboardPasteFile/image-icon.png" width="60" height="60"/>
+                    <br/>
+                   {!v.message}
+                </p>
+            </div>
+        </aura:if>
+
+        <aura:if isTrue="{!v.fileData != null}">
+            <div class="row slds-p-around_x-small" >
+              <img style="border: 1px solid #E0E0E0" id="myimg"/>
+            </div>
+            <div class="row slds-p-around_x-small">
+              <lightning:input name="input1" label="Title" placeholder="Image title..." value="{!v.title}"/>
+            </div>
+            <div class="row slds-align_absolute-center slds-p-bottom_x-small">
+              <lightning:button variant="brand" label="{!v.saveText}" onclick="{!c.saveFile}" />
+              <lightning:button variant="destructive" label="{!v.clearText}" onclick="{!c.clear}" />
+            </div>
+        </aura:if>
+    </div>  
+    
+</aura:component>
