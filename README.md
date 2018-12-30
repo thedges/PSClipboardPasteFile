@@ -1,6 +1,8 @@
 # PSClipboardPasteFile
 Component to capture clipboard images and save as attachments on current record. Use case is case worker that needs to capture screenshot and quickly paste as file on record. Currently only supports images but can consider adding other file types in future.
 
+A title for the image can be provided when saving. If a title is not provided, a default value of "Image_yyyyMMdd_HHmmss" will be provided using Java Date/Time formatting as defined [here](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html).
+
 ![alt text](https://github.com/thedges/PSClipboardPasteFile/blob/master/PSClipboardPasteFile.gif "Demo")
 
 Component has following configuration options:
