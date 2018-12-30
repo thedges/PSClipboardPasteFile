@@ -1,7 +1,7 @@
 # PSClipboardPasteFile
 Component to capture clipboard images and save as attachments on current record. Use case is case worker that needs to capture screenshot and quickly paste as file on record. Currently only supports images but can consider adding other file types in future.
 
-![alt text](https://github.com/thedges/PSClipboardPasteFile/blob/master/https://github.com/thedges/PSClipboardPasteFile/blob/master/PSClipboardPasteFile.gif "Demo")
+![alt text](https://github.com/thedges/PSClipboardPasteFile/blob/master/PSClipboardPasteFile.gif "Demo")
 
 Component has following configuration options:
    * <b>Height</b> - the default height of the component (provide integer value for pixel height)
