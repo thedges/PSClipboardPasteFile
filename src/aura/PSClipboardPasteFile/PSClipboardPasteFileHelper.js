@@ -37,7 +37,7 @@
         }
         else
         {
-            //toastParams.message = errors;
+            toastParams.message = errors;
         }
         // Fire error toast
         let toastEvent = $A.get("e.force:showToast");

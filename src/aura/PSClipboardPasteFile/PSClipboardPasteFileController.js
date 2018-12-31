@@ -30,6 +30,8 @@
                                 component.set('v.fileData', res);
                                 var myimg = document.getElementById ('myimg');
                                 myimg.src = URL.createObjectURL (res);
+                            }, function(err) {
+                                helper.handleErrors(component, err);
                             });
                             
                         }
