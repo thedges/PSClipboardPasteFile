@@ -17,6 +17,7 @@
          <aura:if isTrue="{!v.IsSpinner}">
             <lightning:spinner variant="brand" size="large" />
         </aura:if>
+        <div aura:id="pasteDiv">
         <aura:if isTrue="{!v.fileData == null}">
             <div class="paste-msg" style="{! 'height:' + v.height + 'px'}">
                 <p>
@@ -26,6 +27,7 @@
                 </p>
             </div>
         </aura:if>
+      </div>
 
         <aura:if isTrue="{!v.fileData != null}">
             <div class="row slds-p-around_x-small" >

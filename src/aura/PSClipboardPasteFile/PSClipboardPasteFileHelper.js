@@ -23,6 +23,51 @@
         });
         $A.enqueueAction(action); 
     },
+    addListeners : function (component){
+        var self = this;
+        const pasteComp = component.find('pasteDiv');
+        //pasteComp.forEach(function(item){
+            pasteComp.getElement().addEventListener (
+            'paste',
+            function (pasteEvent) {
+                if(pasteEvent.clipboardData != false){
+                    
+                    var items = pasteEvent.clipboardData.items;
+                    
+                    if(items != undefined)
+                    {
+                        for (var i = 0; i < items.length; i++) {
+                            // Skip content if not image
+                            if (items[i].type.indexOf("image") == -1) continue;
+                            // Retrieve image on clipboard as blob
+                            var imageBlob = items[i].getAsFile();
+                            
+                            console.log('imageBlob size 1 = ' + imageBlob.size);
+                            console.log('imageBlob type 1 = ' + imageBlob.type);
+                            
+                            var imageSize = component.get('v.imageSize');
+                            imageConversion.compressAccurately(imageBlob, imageSize)
+                            .then(function(res) {
+                                console.log(res);
+                                console.log('size = ' + res.size);
+                                console.log('type = ' + res.type);
+                                console.log('name = ' + res.name);
+                                
+                                component.set('v.fileData', res);
+                                var myimg = document.getElementById ('myimg');
+                                myimg.src = URL.createObjectURL (res);
+                            }, function(err) {
+                                self.handleErrors(component, err);
+                            });
+                            
+                        }
+                    }
+                }
+            },
+            false
+        );
+       // });
+    },
     handleErrors: function (component, errors) {
         // Configure error toast
         let toastParams = {

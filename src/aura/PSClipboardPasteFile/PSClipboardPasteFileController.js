@@ -1,8 +1,11 @@
 ({
     init: function (component, event, helper) {
         var imageSize = component.get('v.imageSize');
-        
-        window.addEventListener (
+        /*
+        const pasteComp = component.find('pasteDiv');
+
+        //window.addEventListener (
+        pasteComp.addEventListener (
             'paste',
             function (pasteEvent) {
                 if(pasteEvent.clipboardData != false){
@@ -40,6 +43,7 @@
             },
             false
         );
+        */
     },
     saveFile : function (component, event, helper) {
         var fileData = component.get('v.fileData');
